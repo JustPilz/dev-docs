@@ -1,0 +1,22 @@
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playPause {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  fill: #566574;
+}
+
+[data-theme='dark'] .icon {
+  fill: #aeb9c5;
+}

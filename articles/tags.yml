@@ -1,0 +1,14 @@
+React:
+  label: React
+  permalink: /react
+  description: React tag description
+
+JS:
+  label: JS
+  permalink: /js
+  description: JS tag description
+
+TS:
+  label: TS
+  permalink: /ts
+  description: TS tag description

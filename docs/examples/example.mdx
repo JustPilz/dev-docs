@@ -1,0 +1,39 @@
+---
+id: example-mdx
+sidebar_position: 2
+title: Example MDX
+description: 'Example description'
+draft: true
+---
+
+```js
+---
+id: example-mdx
+sidebar_position: 2
+title: Example MDX
+description: 'Example description'
+draft: false
+---
+
+import Content from '@site/docs/sharedFunctions/Date.mdx';
+
+# date ![Shared](@site/static/img/shared.svg)
+
+<Content />
+```
+
+import Admonition from '@theme/Admonition';
+
+<Admonition type='tip' icon='💡' title='Did you know...'>
+  Use plugins to introduce shorter syntax for the most commonly used JSX
+  elements in your project.
+</Admonition>
+
+```jsx
+import Admonition from '@theme/Admonition';
+
+<Admonition type='tip' icon='💡' title='Did you know...'>
+  Use plugins to introduce shorter syntax for the most commonly used JSX
+  elements in your project.
+</Admonition>;
+```
