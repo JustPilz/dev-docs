@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 <Accordion title="Utility types">
 
 Утилитарные типы — это встроенные типы TypeScript, упрощающие работу с типами, изменяя их или извлекая информацию из них.
@@ -20,30 +16,30 @@ hidden: true
 - **Pick\<T, K>** — берёт только указанные поля из типа.
 
   ```ts
-  type UserName = Pick<User, "name">; // { name: string; }
+  type UserName = Pick<User, 'name'>; // { name: string; }
   ```
 
 - **Omit\<T, K>** — убирает указанные поля.
 
   ```ts
-  type UserWithoutAge = Omit<User, "age">; // { name: string; }
+  type UserWithoutAge = Omit<User, 'age'>; // { name: string; }
   ```
 
 - **Record\<K, T>** — создаёт тип объекта с ключами K и значениями типа T.
 
   ```ts
-  type MyObject = Record<"a" | "b", number>; // { a: number; b: number; }
+  type MyObject = Record<'a' | 'b', number>; // { a: number; b: number; }
   ```
 
 - **Exclude\<T, U>** — исключает из T те типы, которые есть в U.
 
   ```ts
-  type A = Exclude<"a" | "b" | "c", "b">; // 'a' | 'c'
+  type A = Exclude<'a' | 'b' | 'c', 'b'>; // 'a' | 'c'
   ```
 
 - **Extract\<T, U>** — выбирает только те типы из T, что есть в U.
   ```ts
-  type A = Extract<"a" | "b" | "c", "b" | "z">; // 'b'
+  type A = Extract<'a' | 'b' | 'c', 'b' | 'z'>; // 'b'
   ```
 
 **Зачем нужны:**  
