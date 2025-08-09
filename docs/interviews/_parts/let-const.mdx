@@ -1,0 +1,19 @@
+---
+hidden: true
+---
+
+<Accordion title="Вывод типов let/const (type inference)">
+
+Для let - обычный тип, для const - литеральный тип:
+
+```ts
+let x = 'hello' → x: string
+const y = 'hello' → y: 'hello'
+
+let a = 2 → a: number
+const b = 2 → b: 2
+```
+
+Для объектов и массивов у const поведение другое — выводится обычный тип, а не литерал.
+
+</Accordion>

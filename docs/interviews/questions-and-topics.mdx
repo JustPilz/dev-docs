@@ -1,0 +1,117 @@
+---
+id: questions-and-topics
+sidebar_position: 1
+title: Вопросы и темы
+description: 'Наброски по вопросам и темам'
+---
+
+import UtilityTypes from './_parts/utility-types.mdx';
+import LetConst from './_parts/let-const.mdx';
+
+## JS
+
+- Eventloop (микро и макротаски, приоритет микротасок https://task-sources-test.vercel.app/),
+- requestAnimationFrame
+- Потеря контекста в setTimeout
+- Map/Set, WeakMap/WeakSet их отличие
+- Proxy, Object.defineProperty
+- Как отменить асинхронную операцию?
+- shadowDom, Dom, bom
+- Mutation Observer
+
+## Архитектура
+
+- MVC/MVVM
+- Основные паттерны разработки (solid, kiss etc; фабрика, синглтон, адаптер, observer etc)
+- FSD
+- domain driven
+- Contract First
+- Сравнение PnPM, yarn, npm
+
+## Typescript
+
+Any/unknown/never/void
+
+<Accordion title="Условные типы (Conditional Types)">
+
+— это конструкция в TypeScript, позволяющая выбирать один тип из двух в зависимости от условия.
+
+**Синтаксис:**
+
+```ts
+A extends B ? X : Y
+```
+
+Если A совместим с B, выбирается тип X, иначе — тип Y.
+
+**Примеры:**
+
+```ts
+type IsString<T> = T extends string ? true : false;
+
+type Test1 = IsString<'abc'>; // true
+type Test2 = IsString<42>; // false
+```
+
+**Для чего нужны:**
+
+- Обобщённые типы (generic types)
+- Варианты для разных типов данных
+- Продвинутое ветвление в типах
+
+**Пример использования c типами массивов:**
+
+```ts
+type ElementType<T> = T extends (infer U)[] ? U : T;
+
+type A = ElementType<number[]>; // number
+type B = ElementType<string>; // string
+```
+
+</Accordion>
+
+<LetConst />
+
+<UtilityTypes />
+
+#### Declare
+
+#### Interface vs Type (определение, разница)
+
+https://github.com/type-challenges/type-challenges
+
+#### infer
+
+#### Отличия enum от объекта
+
+#### as const
+
+## Безопасность
+
+- Как защититься от парсинга?
+
+## Задачи
+
+- Задача: Типизация reduce
+- Задача: Типизация функции сортировки по ключу
+- Задача: fetch с ретраями
+- Задача: Реализация кеширующей функции
+- Задача: Реализация utility-type (например, Pick, Record)
+- Задача: написать функцию, которая оборачивает другую функцию и кеширует ее результат
+
+`type MyRecord<T, K> = { [key in T]: K }`
+
+Есть посложнее на использование infer'a
+
+Объяснить что делает этот код:
+
+```
+const SomeComponent = isCurrentDomain(Admin) ? React.lazy(() =>
+globalThis.System.import("@sbercloud/welcome-widgets").then(module => ({
+default: module.default
+})) : fallback
+```
+
+Давал задачку на написание функции wait, не справилась. Путает микро и макротаски. не знает синтаксис промиса и связь между промисом и async/await
+
+Прочитать и прорешать задачи на сайте https://www.typescriptlang.org/docs/handbook/intro.html

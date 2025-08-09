@@ -1,0 +1,55 @@
+---
+hidden: true
+---
+
+<Accordion title="Utility types">
+
+Утилитарные типы — это встроенные типы TypeScript, упрощающие работу с типами, изменяя их или извлекая информацию из них.
+
+- **Partial\<T>** — делает все поля типа необязательными.
+
+  ```ts
+  type User = { name: string; age: number };
+  type PartialUser = Partial<User>; // { name?: string; age?: number; }
+  ```
+
+- **Required\<T>** — делает все поля обязательными.
+
+- **Readonly\<T>** — делает поля только для чтения.
+
+- **Pick\<T, K>** — берёт только указанные поля из типа.
+
+  ```ts
+  type UserName = Pick<User, "name">; // { name: string; }
+  ```
+
+- **Omit\<T, K>** — убирает указанные поля.
+
+  ```ts
+  type UserWithoutAge = Omit<User, "age">; // { name: string; }
+  ```
+
+- **Record\<K, T>** — создаёт тип объекта с ключами K и значениями типа T.
+
+  ```ts
+  type MyObject = Record<"a" | "b", number>; // { a: number; b: number; }
+  ```
+
+- **Exclude\<T, U>** — исключает из T те типы, которые есть в U.
+
+  ```ts
+  type A = Exclude<"a" | "b" | "c", "b">; // 'a' | 'c'
+  ```
+
+- **Extract\<T, U>** — выбирает только те типы из T, что есть в U.
+  ```ts
+  type A = Extract<"a" | "b" | "c", "b" | "z">; // 'b'
+  ```
+
+**Зачем нужны:**  
+Для быстрого изменения и создания новых типов без лишнего кода.
+
+**Вся коллекция тут:**  
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+
+</Accordion>
