@@ -6,6 +6,9 @@
   }
   
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background: none;
     border: none;
@@ -22,3 +25,36 @@
     padding: 0 1em;
 }
   
+.arrow {
+    position: relative;
+    display: inline-block;
+    width: 12.9px;
+    height: 7.9px;
+    transition: transform 0.3s;
+    transform: rotate(360deg);
+}
+
+.arrow[data-opened="true"] {
+    transform: rotate(180deg);
+}
+
+.arrow::before,
+.arrow::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: #000000;
+    transform-origin: 50% calc(100% - 1px);
+}
+  
+.arrow::before {
+    transform: rotate(45deg);
+}
+  
+.arrow::after {
+    transform: rotate(-45deg);
+}

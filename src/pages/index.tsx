@@ -1,5 +1,6 @@
 import Heading from '@theme/Heading';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import MDXContent from '@theme/MDXContent';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import clsx from 'clsx';
@@ -10,15 +11,15 @@ function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
+      <div className='container'>
+        <Heading as='h1' className='hero__title'>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className='hero__subtitle'>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
+            className='button button--secondary button--lg'
+            to='/docs/intro'
           >
             Let's go
           </Link>
@@ -31,14 +32,16 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
-      <HomepageHeader />
-      {/* <main>
+    <MDXContent>
+      <Layout
+        title={`Hello from ${siteConfig.title}`}
+        description='Description will go into a meta tag in <head />'
+      >
+        <HomepageHeader />
+        {/* <main>
         <HomepageFeatures />
       </main> */}
-    </Layout>
+      </Layout>
+    </MDXContent>
   );
 }
