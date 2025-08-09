@@ -16,7 +16,7 @@ const userColorMap = new Map({
   '789': ['pink', 'black', 'white'],
 });
 
-const userFavouriteColors = userId => {
+const userFavouriteColors = (userId) => {
   return userColorMap.get(userId);
 };
 ```
@@ -412,7 +412,7 @@ const userColorMap = new Map({
   '789': ['pink', 'black', 'white'],
 });
 
-const userFavouriteColors = userId => {
+const userFavouriteColors = (userId) => {
   return userColorMap.get(userId);
 };
 ```
@@ -1148,7 +1148,11 @@ type ApiResponse =
 // Использование typeof
 // -----
 const someString = 'hello';
+type SomeStringLiteralType = typeof someString; // SomeStringLiteralType это `hello`
+
+let someString = 'hello';
 type SomeStringType = typeof someString; // SomeStringType это `string`
+
 // Использование typeof с массивами
 const words = ['hello', 'world'];
 type WordsType = typeof words[number]; // WordsType это `string`
@@ -1157,7 +1161,7 @@ type WordsType = typeof words[number]; // WordsType это `string`
 // Использование as const
 // -----
 const someString = 'hello';
-type SomeStringLiteralType = typeof someString as const; // SomeStringLiteralType это `hello`
+type SomeStringLiteralType = someString as const; // SomeStringLiteralType это `hello`
 
 // -----
 // Дженерики

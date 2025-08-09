@@ -17,7 +17,7 @@ const userColorMap = new Map({
   789: ['pink', 'black', 'white'],
 });
 
-const userFavouriteColors = userId => {
+const userFavouriteColors = (userId) => {
   return userColorMap.get(userId);
 };
 ```
@@ -285,7 +285,7 @@ const userColorMap = new Map({
   789: ['pink', 'black', 'white'],
 });
 
-const userFavouriteColors = userId => {
+const userFavouriteColors = (userId) => {
   return userColorMap.get(userId);
 };
 ```
@@ -984,7 +984,11 @@ type ApiResponse =
 // Using typeof
 // -----
 const someString = 'hello';
-type SomeStringType = typeof someString; // SomeStringType is `string`
+type SomeConstStringType = typeof someString; // SomeConstStringType is `hello`
+
+let someString = 'hello';
+type SomeLetStringType = typeof someString; // SomeLetStringType это `string`
+
 // Using typeof with arrays
 const words = ['hello', 'world'];
 type WordsType = typeof words[number]; // WordsType is `string`
