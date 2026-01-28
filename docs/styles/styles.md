@@ -5,7 +5,7 @@ title: CSS Notes
 description: 'Helpful CSS notes'
 ---
 
-Подмешать opacity 80% к значению токена:
+Подмешать opacity 80% к значению токена
 
 ```css
 background-color: color-mix(

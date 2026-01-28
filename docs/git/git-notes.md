@@ -11,10 +11,22 @@ description: 'Helpful git notes'
 git config --list | grep alias
 ```
 
+Переименовать последний коммит
+
+```bash
+git commit --amend -m <новое сообщение>
+```
+
 Докинуть файлы в последний коммит и запушить
 
 ```bash
 git add . && git commit --amend --no-edit && git push --force
+```
+
+Поменять автора коммита
+
+```bash
+git commit --amend --author "Твоё имя <you@work.com>"
 ```
 
 Отменить последний коммит
