@@ -1,6 +1,6 @@
 ---
-id: git-notes
-sidebar_position: 1
+id: git
+sidebar_position: 2
 title: Git Notes
 description: 'Helpful git notes'
 ---
