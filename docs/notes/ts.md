@@ -7,6 +7,6 @@ description: 'Helpful Typescript notes'
 
 Условное добавление пропса в компонент. Если `onClick` существует (truthy), то он будет добавлен как проп, иначе — нет
 
-```ts
+```tsx
 <Component {...(onClick && { onClick })}>
 ```
